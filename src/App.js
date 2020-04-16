@@ -3,7 +3,9 @@ import './App.css';
 import Image from './Image'
 import loadImage from './ImageLoader'
 
+var counter = 0
 class App extends React.Component {
+  
   
   constructor(props) {
     super(props);
@@ -33,7 +35,8 @@ class App extends React.Component {
   }
 
   onImageLoaded = (image) => {
-    this.state.image_urls[2] = image // rotate images randomly on load. 
+    this.state.image_urls[counter % 4] = image // rotate images randomly on load. 
+    counter++
     this.setState({image_urls :  this.state.image_urls})
   }
 }

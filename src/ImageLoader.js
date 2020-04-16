@@ -4,14 +4,14 @@ const mock_response = {"id":"dF7XPEbnwgs","created_at":"2020-03-29T09:35:40-04:0
 const axios = require('axios');
 
 function loadImage(callback) {
-    console.log(mock_response)
-    setTimeout(callback(mock_response.urls.regular), 1)
-    // axios.get(imageUrl)
-    //     .then(function (response) {
-    // // handle success
-    // console.log(response);
-    // callback(response.data.urls.regular)
-//   })
+    // console.log(mock_response)
+    // setTimeout(callback(mock_response.urls.regular), 1)
+    axios.get(imageUrl)
+        .then(function (response) {
+    // handle success
+    console.log(response);
+    callback(response.data.urls.regular)
+  })
 
 }
 

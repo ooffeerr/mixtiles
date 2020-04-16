@@ -6,7 +6,7 @@ function Image(props) {
     console.log('props = ' + props)
 
     return (
-        <section style={{width: "100px", height: "100px", borderImage: "url(" + background + ") 30 stretch"}}>
+        <section style={{width: "100px", height: "100px", borderImage: "url(" + background + ") 30 stretch", padding: "16px"}}>
             <img src = {props.image_url} style={{maxWidth: '100%', maxHeight: '100%'}}/>
         </section>
     )

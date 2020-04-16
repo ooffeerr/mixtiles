@@ -15,13 +15,15 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <div>
-          <Image className='image-top' image_url={this.state.image_urls[0]}/>
-          <Image className='image-left' image_url={this.state.image_urls[1]}/>
-          <Image className='image-right' image_url={this.state.image_urls[2]}/>
-          <Image className='image-buttom' image_url={this.state.image_urls[3]}/>
+        <div style={{display: 'flex', alignItems: 'flex-start', flexDirection: 'column'}}>
+          <Image style ={{alignSelf: 'center'}} image_url={this.state.image_urls[0]}/>
+          <div style={{display: 'flex', }}>
+            <Image className='image-left' image_url={this.state.image_urls[1]}/>
+            <Image className='image-right' image_url={this.state.image_urls[2]}/>
+          </div>
+          <Image style ={{alignSelf: 'center'}} image_url={this.state.image_urls[3]}/>
+          <button style ={{alignSelf: 'center'}} onClick={this.onClick}>Refresh</button>
         </div>
-      <button onClick={this.onClick}>Refresh</button>
       </div>
     );
   }
@@ -31,7 +33,7 @@ class App extends React.Component {
   }
 
   onImageLoaded = (image) => {
-    this.state.image_urls[2] = image
+    this.state.image_urls[2] = image // rotate images randomly on load. 
     this.setState({image_urls :  this.state.image_urls})
   }
 }

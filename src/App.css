@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  display: flex;
+  align-items: flex-start;
+  background-color: #787c74;
 }
 
 .App-logo {
